@@ -1,0 +1,211 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{company_name}} - About</title>
+
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+
+    <link href="../static/css/custom.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="../static/images/logo.png" />
+
+    <!-- Bootstrap CSS / Color Scheme -->
+    <link rel="stylesheet" href="../static/css/default.css" id="theme-color">
+</head>
+<body>
+
+<!--navigation-->
+<section class="smart-scroll">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="index.html">
+                {{company_name}}
+            </a>
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span data-feather="grid"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/weather">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/faq">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/contact">Contact Us</a>
+                    </li>
+                    <!-- <li class="nav-item">
+                        <a class="nav-link page-scroll d-flex flex-row align-items-center text-primary" href="#">
+                            <em data-feather="log-in" width="18" height="18" class="mr-2"></em>
+                            Login
+                        </a>
+                    </li> -->
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!-- About us section -->
+<section class="pt-6 pb-7  bg-dark" id="features">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center pt-5">
+                <h2 class="heading-black">About Us</h2>
+                <p class="text-muted lead">At {{company_name}}, we're passionate about empowering individuals with reliable weather information. Our dedicated team of meteorologists and technologists work tirelessly to deliver accurate forecasts and real-time updates, ensuring you stay informed and prepared for whatever nature may bring. Trust {{company_name}} to be your weather companion, guiding you through every forecast.</p>
+            </div>
+        </div>
+        
+        <div class="row mt-6">
+            <div class="col-md-6 mr-auto">
+                <h2>{{company_name}} is more than just a weather app.</h2>
+                <p class="mb-5">{{company_name}} is more than just an app; it's a lifeline during uncertain weather, providing essential information that empowers individuals to plan their activities safely, fostering resilience and peace of mind in the face of changing climates.</p>
+                <a href="/reservation" class="btn btn-light">
+                    Find Locations to plant trees!
+                </a>
+            </div>
+
+            <div class="col-md-5 pt-3">
+                <div class="slick-about">
+                    <img src="../static/images/scene1.jpeg" class="img-fluid rounded d-block mx-auto" alt="Scene 1"/>
+                    <img src="../static/images/scene2.jpeg" class="img-fluid rounded d-block mx-auto" alt="Scene 2"/>
+                    <img src="../static/images/scene3.jpeg" class="img-fluid rounded d-block mx-auto" alt="Scene 3"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="row " style="padding-left: 15px;">
+            <p class="mt-5 display-6">Our website leverages the Google Maps API to gather location data from users and the WeatherAPI.com to gather weather information. This information is then analyzed to develop a comprehensive plan for implementing afforestation initiatives in the region.</p>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- Why us? -->
+<section class="py-7 section-angle top-left bottom-left" id="blog">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2 class="heading-black">Why should I use this service?</h2>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-4 pb-2">
+                <div class="card">
+
+                    <div class="card-body">
+                        <a href="#" class="card-title mb-2"><h5>Pinpoint Accuracy</h5></a>
+                        <p class="card-text">{{company_name}} provides precise weather forecasts tailored to your exact location, ensuring you're always informed about the conditions right where you are, whether you're at home, work, or on the go.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pb-2">
+                <div class="card">
+
+                    <div class="card-body">
+                        <a href="#" class="card-title mb-2"><h5>Real-time Updates</h5></a>
+                        <p class="card-text">With {{company_name}}, you'll receive timely updates on changing weather patterns, empowering you to plan your activities with confidence and stay prepared for sudden weather changes</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 pb-2">
+                <div class="card">
+
+                    <div class="card-body">
+                        <a href="#" class="card-title mb-2"><h5>User-Friendly Interface</h5></a>
+                        <p class="card-text">Our app offers an intuitive and easy-to-use interface, making it effortless for users of all ages and backgrounds to access essential weather information and navigate through forecasts, ensuring a seamless experience every time you check the weather.</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-6">
+            <div class="col-md-6 mx-auto text-center">
+                <a href="/faq" class="btn btn-primary">View frequently asked questions</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer class="py-5  bg-dark">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5 mr-auto">
+                <h5>About {{company_name}}</h5>
+                <p class="text-muted">Experience weather mastery with {{company_name}}, your ultimate forecast companion. Offering pinpoint accuracy and real-time updates, {{company_name}} keeps you one step ahead of changing conditions. Seamlessly blending intuitive design with comprehensive data, {{company_name}} ensures you're prepared for whatever the elements may bring, wherever your journey takes you.</p>
+                <ul class="list-inline social social-sm">
+                    <li class="list-inline-item">
+                        <a href=""><i class="fa fa-facebook"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href=""><i class="fa fa-instagram"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href=""><i class="fa fa-twitter"></i></a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href=""><i class="fa fa-google-plus"></i></a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Legal</h5>
+                <ul class="list-unstyled">
+                    <li><a href="">Privacy</a></li>
+                    <li><a href="">Terms</a></li>
+                    <li><a href="">Refund policy</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Partner</h5>
+                <ul class="list-unstyled">
+                    <li><a href="">Refer a friend</a></li>
+                    <li><a href="">Affiliates</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2">
+                <h5>Help</h5>
+                <ul class="list-unstyled">
+                    <li><a href="mailto:hi">Support</a></li>
+                    <li><a href="">Log in</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-12 text-muted text-center small-xl">
+                &copy; 2023 {{company_name}} - All Rights Reserved
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!--scroll to top-->
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.7.3/feather.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="../static/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en" ng-app="contactApp" ng-controller="contactCtrl">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{company_name}} - Contact Support</title>
+
+    <!--Inter UI font-->
+    <link href="https://rsms.me/inter/inter-ui.css" rel="stylesheet">
+
+    <!--vendors styles-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link href="../static/css/custom.css" rel="stylesheet">
+
+    <link rel="icon" type="image/x-icon" href="../static/images/logo.png" />
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../static/css/default.css" id="theme-color">
+    
+    <!-- Angular JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <style>
+        .error {
+            color: red;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+<!--navigation-->
+<section class="smart-scroll ">
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <a class="navbar-brand heading-black" href="/">
+                {{company_name}}
+            </a>
+
+            <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse"
+                    data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span data-feather="grid"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/weather">Weather</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/about">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="/contact">Contact Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <span class="nav-link" style="color: #ffffff;"><strong>Welcome, {{ session['user'] }}</strong></span>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary ml-2 text-dark" href="/logout" role="button" style="background-color: #1ee9b6;">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</section>
+
+<!--contact section-->
+<section class="py-7 bg-dark section-angle bottom-left" id="faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto text-center">
+                <h2>Contact Support</h2>
+                <p class="text-muted lead">Fill the form below to contact us.</p>
+            </div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-md-10 mx-auto">
+                <form name="contactForm" ng-submit="submitForm(contactForm.$valid)" novalidate method="POST" >
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Full Name" name="name" ng-model="contact.name" required>
+                        <div ng-show="contactForm.name.$touched && contactForm.name.$invalid" class="error">
+                            Name is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" ng-model="contact.email" required>
+                        <div ng-show="contactForm.email.$touched && contactForm.email.$invalid" class="error">
+                            Valid email is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="Phone Number" name="phone" ng-model="contact.phone" ng-pattern="/^[0-9]{10}$/" required>
+                        <div ng-show="contactForm.phone.$touched && contactForm.phone.$invalid" class="error">
+                            A valid 10-digit phone number is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input type="text" class="form-control" id="subject" placeholder="Subject" name="subject" ng-model="contact.subject" required>
+                        <div ng-show="contactForm.subject.$touched && contactForm.subject.$invalid" class="error">
+                            Subject is required.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="3" name="message" ng-model="contact.message" required></textarea>
+                        <div ng-show="contactForm.message.$touched && contactForm.message.$invalid" class="error">
+                            Message is required.
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <button type="submit" class="btn btn-primary" ng-disabled="contactForm.$invalid">Submit</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!--footer-->
+<footer class="py-5">
+    <!-- same footer content -->
+</footer>
+
+<!--scroll to top-->
+<div class="scroll-top">
+    <i class="fa fa-angle-up" aria-hidden="true"></i>
+</div>
+
+<!--scroll to top-->
+<script>
+    var contactApp = angular.module('contactApp', []);
+    
+    contactApp.controller('contactCtrl', function ($scope, $http) {
+        $scope.contact = {};
+        
+        $scope.submitForm = function(isValid) {
+            if (isValid) {
+                // Define the payload data
+                var data = {
+                    name: $scope.contact.name,
+                    email: $scope.contact.email,
+                    phone: $scope.contact.phone,
+                    subject: $scope.contact.subject,
+                    message: $scope.contact.message
+                };
+
+                // Make the POST request
+                $http.post('/contact', data)
+                .then(function(response) {
+                    // Handle success
+                    alert('Form Submitted Successfully!');
+                    $scope.contact = {};
+                    $scope.contactForm.$setPristine();  // Set form to pristine state
+                    $scope.contactForm.$setUntouched(); // Set form to untouched state
+                    
+                }, function(error) {
+                    // Handle error
+                    alert('There was an error submitting the form.');
+                });
+            }
+        };
+    });
+</script>
+
+
+</body>
+</html>
